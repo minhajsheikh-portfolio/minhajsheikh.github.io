@@ -1,21 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Home | Minhaj Sheikh</title>
 
-<meta name="description" content="Minhaj Sheikh — E-Commerce & Marketplace Specialist specializing in Amazon, Walmart, Shopify, TikTok Shop, product research, listing SEO, PPC, operations and creative.">
+<meta
+name="description"
+content="Minhaj Sheikh — E-Commerce & Marketplace Specialist specializing in Amazon, Walmart, Shopify, TikTok Shop, product research, listing SEO, PPC, operations and creative."
+>
 
-<link rel="icon" href="https://res.cloudinary.com/on8dtdtw/image/upload/v1790719094/LOGO_FAVICON.png">
+<link
+rel="icon"
+href="https://res.cloudinary.com/on8dtdtw/image/upload/v1790719094/LOGO_FAVICON.png"
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin
+>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -25,22 +46,16 @@ html{
     scroll-behavior:smooth;
 }
 
-:root{
-    --n:#0b172a;
-    --n2:#12314d;
-    --t:#14b8a6;
-    --t2:#5eead4;
-    --ink:#172033;
-    --m:#64748b;
-    --line:#e2e8f0;
-    --soft:#f5f8fb;
-}
-
 body{
     margin:0;
     font-family:Inter,Arial,sans-serif;
-    color:var(--ink);
+    color:#172033;
     line-height:1.65;
+    background:#fff;
+}
+
+img{
+    max-width:100%;
 }
 
 a{
@@ -48,233 +63,474 @@ a{
     color:inherit;
 }
 
+button{
+    font-family:inherit;
+}
+
+:root{
+
+    --navy:#0b172a;
+    --navy2:#12314d;
+
+    --teal:#14b8a6;
+    --teal2:#5eead4;
+
+    --ink:#172033;
+    --muted:#64748b;
+
+    --line:#e2e8f0;
+    --soft:#f5f8fb;
+
+    --white:#fff;
+}
+
 .container{
     width:min(1180px,calc(100% - 32px));
     margin:auto;
 }
 
-/* =========================
+
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .site-header{
+
     position:sticky;
     top:0;
-    z-index:20;
-    background:#fffffff2;
-    backdrop-filter:blur(12px);
+    z-index:100;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(14px);
+
     border-bottom:1px solid var(--line);
 }
 
 .nav{
-    height:76px;
+
+    min-height:76px;
+
     display:flex;
     align-items:center;
+
     gap:20px;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+}
+
 .logo img{
+
     width:150px;
     max-height:48px;
+
     object-fit:contain;
 }
 
 .navlinks{
+
     display:flex;
+    align-items:center;
+
     gap:3px;
+
     margin-left:auto;
 }
 
 .navlinks a{
+
     padding:9px 11px;
+
     border-radius:8px;
+
     font-size:13px;
+
     font-weight:700;
+
     color:#475569;
+
+    transition:.2s;
 }
 
 .navlinks a:hover,
-.navlinks .active{
+.navlinks a.active{
+
     background:#ecfdf9;
+
     color:#0f766e;
 }
 
 .btn{
+
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
+
     padding:12px 18px;
+
     border-radius:10px;
-    font-weight:800;
+
     font-size:14px;
+
+    font-weight:800;
+
     border:1px solid transparent;
+
+    transition:.2s;
+
+    cursor:pointer;
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
 }
 
 .primary{
-    background:var(--t);
+
+    background:var(--teal);
+
     color:#062c28;
 }
 
+.primary:hover{
+
+    background:#2dd4bf;
+}
+
 .dark{
-    background:var(--n);
+
+    background:var(--navy);
+
     color:#fff;
+}
+
+.dark:hover{
+
+    background:#12314d;
 }
 
 .outline{
-    border-color:#64748b;
+
+    border-color:rgba(255,255,255,.5);
+
     color:#fff;
+
+    background:rgba(255,255,255,.04);
+}
+
+.outline:hover{
+
+    background:rgba(255,255,255,.12);
+
+    border-color:#fff;
 }
 
 .hire{
-    background:var(--n);
+
+    background:var(--navy);
+
     color:#fff;
+
+    margin-left:4px;
 }
 
 .menu{
+
     display:none;
+
     border:0;
+
     background:none;
-    font-size:25px;
+
+    color:var(--navy);
+
+    font-size:27px;
+
+    cursor:pointer;
+
+    padding:5px;
 }
 
-/* =========================
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-nav{
+
+    display:none;
+
+    border-top:1px solid var(--line);
+
+    background:#fff;
+
+    padding:10px 16px 18px;
+}
+
+.mobile-nav a{
+
+    display:block;
+
+    padding:12px 10px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:#475569;
+}
+
+.mobile-nav a:hover{
+
+    background:#ecfdf9;
+
+    color:#0f766e;
+}
+
+.mobile-nav.open{
+
+    display:block;
+}
+
+
+/* =========================================================
    HERO
-========================= */
+========================================================= */
+
+/*
+   IMPORTANT:
+
+   HERO_BANNER.png = 1920 × 700
+
+   We DO NOT use background-size:cover here.
+
+   cover causes cropping.
+
+   Instead the desktop hero preserves the exact
+   1920:700 aspect ratio.
+*/
 
 .hero{
+
     position:relative;
-    min-height:680px;
+
+    width:100%;
+
     overflow:hidden;
+
     color:#fff;
 
-    background-image:url("https://res.cloudinary.com/on8dtdtw/image/upload/v1790719094/HERO_BANNER.png");
-    background-size:cover;
-    background-position:center center;
+    background-color:#071322;
+
+    /*
+       Exact banner ratio:
+       1920 / 700
+    */
+
+    aspect-ratio:1920 / 700;
+
+    /*
+       Full banner width.
+       No cover cropping.
+    */
+
+    background-image:url(
+        "https://res.cloudinary.com/on8dtdtw/image/upload/v1790719094/HERO_BANNER.png"
+    );
+
+    background-size:100% auto;
+
+    background-position:center top;
+
     background-repeat:no-repeat;
 }
 
+
+/*
+   Dark gradient only on left side.
+   This keeps right-side artwork visible.
+*/
+
 .hero::before{
+
     content:"";
+
     position:absolute;
+
     inset:0;
 
     background:linear-gradient(
+
         90deg,
-        rgba(7,19,34,.97) 0%,
-        rgba(7,19,34,.93) 28%,
-        rgba(7,19,34,.78) 45%,
-        rgba(7,19,34,.38) 64%,
-        rgba(7,19,34,.08) 100%
+
+        rgba(7,19,34,.96) 0%,
+
+        rgba(7,19,34,.92) 23%,
+
+        rgba(7,19,34,.76) 39%,
+
+        rgba(7,19,34,.38) 57%,
+
+        rgba(7,19,34,.08) 78%,
+
+        rgba(7,19,34,0) 100%
+
     );
 
     z-index:0;
+
+    pointer-events:none;
 }
 
+
 .hero-grid{
+
     position:relative;
+
     z-index:1;
 
-    min-height:680px;
+    height:100%;
 
     display:flex;
+
     align-items:center;
 }
 
 .hero-grid > div:first-child{
-    width:58%;
+
+    width:59%;
+
     max-width:720px;
 }
 
-.hero h1,
-.pagehero h1{
-    font-size:clamp(40px,5vw,64px);
+
+.hero h1{
+
+    font-size:clamp(38px,4.2vw,64px);
+
     line-height:1.06;
+
     letter-spacing:-.045em;
-    margin:8px 0 20px;
+
+    margin:9px 0 20px;
 }
 
 .hero h1 span{
-    color:var(--t2);
+
+    color:var(--teal2);
 }
 
-.hero p,
-.pagehero p{
-    color:#cbd5e1;
-    font-size:17px;
-    max-width:680px;
-}
+.hero p{
 
-.heroimg{
-    display:none;
+    color:#d3dce8;
+
+    font-size:16px;
+
+    max-width:670px;
+
+    margin:0;
 }
 
 .eyebrow,
 .kicker{
+
     font-size:12px;
+
     letter-spacing:.13em;
+
     text-transform:uppercase;
+
     font-weight:900;
-    color:var(--t);
+
+    color:var(--teal);
 }
 
-.hero .eyebrow,
-.pagehero .eyebrow{
-    color:var(--t2);
+.hero .eyebrow{
+
+    color:var(--teal2);
 }
 
 .actions{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:10px;
+
     margin-top:25px;
 }
 
-/* =========================
+
+/* =========================================================
    GENERAL SECTIONS
-========================= */
+========================================================= */
 
 .section{
+
     padding:82px 0;
 }
 
 .soft{
+
     background:var(--soft);
 }
 
 .darksec{
-    background:var(--n);
+
+    background:var(--navy);
+
     color:#fff;
 }
 
 .head{
+
     max-width:740px;
+
     margin-bottom:35px;
 }
 
 .head.center{
+
     text-align:center;
+
     margin-left:auto;
+
     margin-right:auto;
 }
 
 .head h2{
+
     font-size:clamp(30px,4vw,44px);
+
     line-height:1.12;
+
     letter-spacing:-.035em;
+
     margin:8px 0 12px;
 }
 
 .lead{
-    color:var(--m);
+
+    color:var(--muted);
 }
 
 .darksec .lead{
+
     color:#cbd5e1;
 }
 
-/* =========================
+
+/* =========================================================
    MARKETPLACES
-========================= */
+========================================================= */
 
 .markets,
 .services,
@@ -282,611 +538,995 @@ a{
 .metrics,
 .certs,
 .expertise{
+
     display:grid;
+
     gap:18px;
 }
 
 .markets{
+
     grid-template-columns:repeat(4,1fr);
 }
 
-.markets>div,
+.markets > div,
 .card,
 .metric,
 .cert{
+
     border:1px solid var(--line);
+
     border-radius:16px;
+
     background:#fff;
+
     padding:24px;
 }
 
 .markets small{
+
     display:block;
-    color:var(--m);
+
+    color:var(--muted);
+
     margin-top:4px;
 }
 
-/* =========================
+
+/* =========================================================
    SERVICES
-========================= */
+========================================================= */
 
 .services{
+
     grid-template-columns:repeat(4,1fr);
 }
 
 .service{
+
     border:1px solid var(--line);
+
     border-radius:18px;
+
     background:#fff;
+
     padding:24px;
+
     transition:.2s;
 }
 
 .service:hover,
 .card:hover{
+
     transform:translateY(-3px);
-    box-shadow:0 15px 40px #0f233d12;
+
+    box-shadow:0 15px 40px rgba(15,35,61,.07);
 }
 
 .service small{
-    color:var(--t);
+
+    color:var(--teal);
+
     font-weight:900;
 }
 
 .service h3{
+
     margin-top:25px;
 }
 
 .service p,
 .work p,
 .cert p{
+
     font-size:14px;
-    color:var(--m);
+
+    color:var(--muted);
 }
 
 .link{
+
     color:#0f766e;
+
     font-weight:850;
+
     font-size:13px;
 }
 
 .link:after{
+
     content:' →';
 }
 
-/* =========================
+
+/* =========================================================
    EXPERTISE
-========================= */
+========================================================= */
 
 .expertise{
+
     grid-template-columns:repeat(3,1fr);
 }
 
 .tags{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:8px;
+
     margin-top:14px;
 }
 
 .tag{
+
     font-size:12px;
+
     background:#f8fafc;
+
     border:1px solid #dbe5ee;
+
     border-radius:99px;
+
     padding:6px 9px;
+
     color:#475569;
 }
 
-/* =========================
+
+/* =========================================================
    PROCESS
-========================= */
+========================================================= */
 
 .process{
+
     display:grid;
+
     grid-template-columns:repeat(6,1fr);
+
     gap:10px;
 }
 
 .step{
+
     padding:20px;
-    border:1px solid #ffffff1c;
-    background:#ffffff08;
+
+    border:1px solid rgba(255,255,255,.11);
+
+    background:rgba(255,255,255,.03);
+
     border-radius:14px;
 }
 
 .step b{
-    color:var(--t2);
+
+    color:var(--teal2);
+
     display:block;
+
     font-size:12px;
 }
 
-/* =========================
+
+/* =========================================================
    METRICS
-========================= */
+========================================================= */
 
 .metrics{
+
     grid-template-columns:repeat(4,1fr);
 }
 
 .metric strong{
+
     font-size:30px;
+
     display:block;
 }
 
 .metric span{
+
     font-size:13px;
-    color:var(--m);
+
+    color:var(--muted);
 }
 
-/* =========================
+
+/* =========================================================
    FEATURED WORK
-========================= */
+========================================================= */
 
 .works{
+
     grid-template-columns:repeat(3,1fr);
 }
 
 .work{
+
     border:1px solid var(--line);
+
     border-radius:18px;
+
     overflow:hidden;
+
     background:#fff;
+
+    transition:.2s;
+}
+
+.work:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 40px rgba(15,35,61,.08);
 }
 
 .art{
+
     height:200px;
+
     padding:24px;
-    background:linear-gradient(135deg,#0b172a,#123b57);
+
+    background:linear-gradient(
+        135deg,
+        #0b172a,
+        #123b57
+    );
+
     position:relative;
 }
 
 .window{
+
     height:100%;
-    border:1px solid #ffffff26;
-    background:#ffffff0b;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.04);
+
     border-radius:11px;
+
     padding:14px;
 }
 
 .dots i{
+
     display:inline-block;
+
     width:6px;
+
     height:6px;
+
     border-radius:50%;
-    background:var(--t2);
+
+    background:var(--teal2);
+
     margin-right:4px;
 }
 
 .lines{
+
     display:grid;
+
     grid-template-columns:1.4fr .6fr;
+
     gap:10px;
+
     margin-top:12px;
 }
 
 .lines i{
+
     display:block;
+
     height:52px;
+
     border-radius:8px;
-    background:#ffffff10;
+
+    background:rgba(255,255,255,.06);
 }
 
 .lines i.tall{
+
     height:82px;
 }
 
 .art label{
+
     position:absolute;
+
     right:15px;
+
     bottom:12px;
+
     color:#fff;
+
     font-size:10px;
+
     font-weight:900;
+
     text-transform:uppercase;
 }
 
 .workbody{
+
     padding:22px;
 }
 
 .badge{
+
     display:inline-block;
+
     background:#ecfdf9;
+
     color:#0f766e;
+
     border-radius:99px;
+
     padding:4px 8px;
+
     font-size:10px;
+
     font-weight:900;
 }
 
-/* =========================
+
+/* =========================================================
    CREATIVE
-========================= */
+========================================================= */
 
 .creative{
+
     display:grid;
+
     grid-template-columns:.9fr 1.1fr;
+
     gap:50px;
+
     align-items:center;
 }
 
 .creativebox{
-    background:linear-gradient(145deg,#071322,#12334d);
+
+    background:linear-gradient(
+        145deg,
+        #071322,
+        #12334d
+    );
+
     border-radius:24px;
+
     padding:32px;
+
     color:#fff;
 }
 
 .mock{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:10px;
+
     margin-top:18px;
 }
 
 .mock div{
+
     min-height:90px;
-    border:1px solid #ffffff1b;
-    background:#ffffff0a;
+
+    border:1px solid rgba(255,255,255,.11);
+
+    background:rgba(255,255,255,.04);
+
     border-radius:11px;
+
     padding:12px;
 }
 
 .mock .wide{
+
     grid-column:1/-1;
 }
 
 .checkgrid{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:10px;
 }
 
 .check:before{
+
     content:'✓';
+
     color:#0f766e;
+
     font-weight:900;
+
     margin-right:7px;
 }
 
-/* =========================
+
+/* =========================================================
    CTA
-========================= */
+========================================================= */
 
 .cta{
-    background:linear-gradient(120deg,#081526,#0e314c);
+
+    background:linear-gradient(
+        120deg,
+        #081526,
+        #0e314c
+    );
+
     color:#fff;
+
     border-radius:24px;
+
     padding:45px;
 }
 
 .ctarow{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:25px;
 }
 
-/* =========================
+
+/* =========================================================
    INNER PAGE HERO
-========================= */
+========================================================= */
 
 .pagehero{
+
     padding:68px 0;
+
     background:linear-gradient(
         135deg,
         #071322,
         #102b49 60%,
         #0e4c52
     );
+
     color:#fff;
 }
 
 .pagehero h1{
+
     max-width:850px;
+
+    font-size:clamp(40px,5vw,64px);
+
+    line-height:1.06;
+
+    letter-spacing:-.045em;
+
+    margin:8px 0 20px;
 }
 
-/* =========================
+
+/* =========================================================
    OTHER COMPONENTS
-========================= */
+========================================================= */
 
 .two{
+
     display:grid;
+
     grid-template-columns:1.1fr .9fr;
+
     gap:50px;
 }
 
 .profile{
+
     border-radius:22px;
+
     width:100%;
+
     aspect-ratio:1;
+
     object-fit:cover;
 }
 
 .timeline{
+
     border-left:2px solid #dbe5ee;
 }
 
 .item{
+
     position:relative;
+
     padding:0 0 32px 28px;
 }
 
 .item:before{
+
     content:'';
+
     position:absolute;
+
     width:10px;
+
     height:10px;
-    background:var(--t);
+
+    background:var(--teal);
+
     border-radius:50%;
+
     left:-6px;
+
     top:8px;
 }
 
 .meta{
+
     font-size:12px;
+
     color:#0f766e;
+
     font-weight:900;
 }
 
 .detailgrid,
 .casegrid{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:18px;
 }
 
 .feature{
+
     padding:16px;
+
     border:1px solid var(--line);
+
     border-radius:12px;
 }
 
 .feature span{
+
     display:block;
-    color:var(--m);
+
+    color:var(--muted);
+
     font-size:13px;
 }
 
 .casehero{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:45px;
+
     align-items:center;
 }
 
 .caseart .art{
+
     height:330px;
 }
 
 .note{
+
     margin-top:15px;
+
     padding:12px 14px;
+
     border:1px dashed #cbd5e1;
+
     background:#f8fafc;
+
     border-radius:10px;
+
     color:#64748b;
+
     font-size:12px;
 }
 
 .formgrid{
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:16px;
 }
 
 .field{
+
     display:flex;
+
     flex-direction:column;
+
     gap:6px;
 }
 
 .full{
+
     grid-column:1/-1;
 }
 
 .field label{
+
     font-size:13px;
+
     font-weight:800;
 }
 
 .field input,
 .field select,
 .field textarea{
+
     font:inherit;
+
     padding:12px;
+
     border:1px solid #cbd5e1;
+
     border-radius:10px;
+
+    outline:none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+
+    border-color:var(--teal);
+
+    box-shadow:0 0 0 3px rgba(20,184,166,.1);
 }
 
 .field textarea{
+
     min-height:150px;
 }
 
 .contact{
+
     display:grid;
+
     grid-template-columns:.7fr 1.3fr;
+
     gap:25px;
 }
 
 .contactitem{
+
     padding:15px;
+
     border:1px solid var(--line);
+
     border-radius:12px;
+
     margin-bottom:10px;
 }
 
 .contactitem small{
+
     display:block;
-    color:var(--m);
+
+    color:var(--muted);
+
     text-transform:uppercase;
+
     font-size:10px;
+
     font-weight:900;
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 .footer{
+
     background:#071322;
+
     color:#94a3b8;
+
     padding:55px 0 0;
 }
 
 .footgrid{
+
     display:grid;
+
     grid-template-columns:1.5fr .8fr .9fr 1fr;
+
     gap:30px;
 }
 
 .footer h4{
+
     color:#fff;
+
     font-size:13px;
 }
 
 .footer a{
+
     display:block;
+
     margin:7px 0;
+
     font-size:13px;
 }
 
+.footer a:hover{
+
+    color:var(--teal2);
+}
+
 .bottom{
-    border-top:1px solid #ffffff12;
+
+    border-top:1px solid rgba(255,255,255,.07);
+
     margin-top:35px;
+
     padding:17px 0;
+
     display:flex;
+
     justify-content:space-between;
+
     font-size:11px;
 }
 
-/* =========================
+
+/* =========================================================
    TABLET
-========================= */
+========================================================= */
+
+@media(max-width:1100px){
+
+    .navlinks{
+
+        gap:0;
+    }
+
+    .navlinks a{
+
+        padding:8px 8px;
+
+        font-size:12px;
+    }
+
+    .hero-grid > div:first-child{
+
+        width:62%;
+    }
+
+    .hero h1{
+
+        font-size:clamp(38px,5vw,54px);
+    }
+}
+
 
 @media(max-width:950px){
 
     .navlinks,
     .hire{
+
         display:none;
     }
 
     .menu{
+
         display:block;
+
         margin-left:auto;
     }
 
+
+    /*
+       At tablet width the desktop 1920:700
+       ratio becomes too short for the amount
+       of text.
+
+       We therefore switch to a larger hero
+       while keeping the image proportional.
+    */
+
     .hero{
-        min-height:650px;
-        background-position:center center;
+
+        aspect-ratio:auto;
+
+        min-height:620px;
+
+        background-size:auto 100%;
+
+        background-position:right center;
     }
 
     .hero-grid{
-        min-height:650px;
+
+        min-height:620px;
+
+        height:auto;
+
+        padding:70px 0;
     }
 
     .hero-grid > div:first-child{
-        width:70%;
+
+        width:72%;
+
+        max-width:650px;
     }
 
-    .hero h1{
-        font-size:clamp(40px,6vw,56px);
+    .hero::before{
+
+        background:linear-gradient(
+
+            90deg,
+
+            rgba(7,19,34,.97) 0%,
+
+            rgba(7,19,34,.92) 30%,
+
+            rgba(7,19,34,.70) 52%,
+
+            rgba(7,19,34,.30) 76%,
+
+            rgba(7,19,34,.10) 100%
+
+        );
     }
 
     .two,
     .creative,
     .casehero,
     .contact{
+
         grid-template-columns:1fr;
     }
 
     .services,
     .markets{
+
         grid-template-columns:repeat(2,1fr);
     }
 
     .works{
+
         grid-template-columns:repeat(2,1fr);
     }
 
     .expertise{
+
         grid-template-columns:1fr;
     }
 
     .metrics{
+
         grid-template-columns:repeat(2,1fr);
     }
 
     .process{
+
         grid-template-columns:repeat(3,1fr);
     }
 
     .footgrid{
+
         grid-template-columns:1fr 1fr;
     }
 }
 
-/* =========================
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:620px){
 
     .container{
+
         width:calc(100% - 26px);
     }
 
     .section{
+
         padding:60px 0;
     }
 
+
+    /*
+       Mobile:
+
+       A 1920:700 banner is extremely wide.
+       Keeping the entire image visible would make
+       the hero only ~140px tall on a 390px phone.
+
+       Therefore mobile uses the banner at a larger
+       visual scale and focuses the background toward
+       the right-side artwork.
+    */
+
     .hero{
+
         min-height:720px;
 
-        /*
-          Background ko thoda right shift kiya gaya hai
-          taake laptop/dashboard mobile par bhi visible rahe.
-        */
-        background-position:68% center;
+        aspect-ratio:auto;
+
+        background-size:auto 720px;
+
+        background-position:72% center;
     }
 
     .hero::before{
+
         background:linear-gradient(
+
             180deg,
-            rgba(7,19,34,.96) 0%,
-            rgba(7,19,34,.91) 45%,
-            rgba(7,19,34,.70) 72%,
-            rgba(7,19,34,.50) 100%
+
+            rgba(7,19,34,.97) 0%,
+
+            rgba(7,19,34,.93) 38%,
+
+            rgba(7,19,34,.78) 65%,
+
+            rgba(7,19,34,.56) 100%
+
         );
     }
 
     .hero-grid{
+
         min-height:720px;
+
         padding:70px 0;
+
         align-items:flex-start;
     }
 
     .hero-grid > div:first-child{
+
         width:100%;
+
         max-width:100%;
     }
 
     .hero h1,
     .pagehero h1{
+
         font-size:39px;
     }
 
     .hero p{
+
         font-size:16px;
     }
 
     .actions{
+
         flex-direction:column;
+
         align-items:stretch;
     }
 
     .actions .btn{
+
         width:100%;
     }
 
@@ -898,90 +1538,220 @@ a{
     .detailgrid,
     .casegrid,
     .formgrid{
+
         grid-template-columns:1fr;
     }
 
     .full{
+
         grid-column:auto;
     }
 
     .checkgrid{
+
         grid-template-columns:1fr;
     }
 
     .ctarow,
     .bottom{
+
         display:block;
     }
 
     .bottom span{
+
         display:block;
+
         margin:5px 0;
     }
 
     .footgrid{
+
         grid-template-columns:1fr;
+    }
+
+    .creativebox{
+
+        padding:25px;
+    }
+
+    .cta{
+
+        padding:30px 24px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+    .hero{
+
+        min-height:760px;
+
+        background-size:auto 760px;
+    }
+
+    .hero-grid{
+
+        min-height:760px;
+
+        padding-top:55px;
+    }
+
+    .hero h1{
+
+        font-size:34px;
     }
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      HEADER
-========================= -->
+========================================================= -->
 
 <header class="site-header">
 
     <div class="container nav">
 
-        <a class="logo" href="index.html">
+        <a
+            class="logo"
+            href="index.html"
+            aria-label="Minhaj Sheikh Home"
+        >
+
             <img
                 src="https://res.cloudinary.com/on8dtdtw/image/upload/v1790719094/LOGO.png"
                 alt="Minhaj Sheikh"
             >
+
         </a>
 
-        <nav class="navlinks">
 
-            <a class="active" href="index.html">Home</a>
+        <nav
+            class="navlinks"
+            aria-label="Main Navigation"
+        >
 
-            <a href="about.html">About</a>
+            <a
+                class="active"
+                href="index.html"
+            >
+                Home
+            </a>
 
-            <a href="services.html">Services</a>
+            <a href="about.html">
+                About
+            </a>
 
-            <a href="work.html">Work</a>
+            <a href="services.html">
+                Services
+            </a>
 
-            <a href="experience.html">Experience</a>
+            <a href="work.html">
+                Work
+            </a>
 
-            <a href="certificates.html">Certificates</a>
+            <a href="experience.html">
+                Experience
+            </a>
 
-            <a href="resume.html">Resume</a>
+            <a href="certificates.html">
+                Certificates
+            </a>
 
-            <a href="contact.html">Contact</a>
+            <a href="resume.html">
+                Resume
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
 
         </nav>
 
-        <a class="btn hire" href="contact.html">
+
+        <a
+            class="btn hire"
+            href="contact.html"
+        >
             Hire Me
         </a>
 
-        <button class="menu" aria-label="Open navigation menu">
+
+        <button
+            class="menu"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
             ☰
         </button>
 
     </div>
+
+
+    <!-- MOBILE NAVIGATION -->
+
+    <nav
+        class="mobile-nav"
+        id="mobileNav"
+        aria-label="Mobile Navigation"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="services.html">
+            Services
+        </a>
+
+        <a href="work.html">
+            Work
+        </a>
+
+        <a href="experience.html">
+            Experience
+        </a>
+
+        <a href="certificates.html">
+            Certificates
+        </a>
+
+        <a href="resume.html">
+            Resume
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
 
 </header>
 
 
 <main>
 
-<!-- =========================
+
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <section class="hero">
 
@@ -993,24 +1763,40 @@ a{
                 E-Commerce & Marketplace Specialist
             </span>
 
+
             <h1>
+
                 I Help E-Commerce Businesses
-                <span>Build, Optimize & Manage</span>
+
+                <span>
+                    Build, Optimize & Manage
+                </span>
+
                 Their Marketplaces
+
             </h1>
 
+
             <p>
-                Hands-on marketplace support across Amazon, Walmart,
-                Shopify and TikTok Shop — from product research and
-                listing SEO to PPC, operations, dropshipping and
-                e-commerce creative.
+
+                Hands-on marketplace support across Amazon,
+                Walmart, Shopify and TikTok Shop — from product
+                research and listing SEO to PPC, operations,
+                dropshipping and e-commerce creative.
+
             </p>
+
 
             <div class="actions">
 
-                <a class="btn primary" href="work.html">
+
+                <a
+                    class="btn primary"
+                    href="work.html"
+                >
                     View My Work
                 </a>
+
 
                 <a
                     class="btn outline"
@@ -1021,9 +1807,14 @@ a{
                     Download Resume
                 </a>
 
-                <a class="btn outline" href="contact.html">
+
+                <a
+                    class="btn outline"
+                    href="contact.html"
+                >
                     Contact Me
                 </a>
+
 
             </div>
 
@@ -1034,13 +1825,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      MARKETPLACES
-========================= -->
+========================================================= -->
 
 <section class="section">
 
     <div class="container">
+
 
         <div class="head center">
 
@@ -1053,41 +1845,69 @@ a{
             </h2>
 
             <p class="lead">
+
                 Practical marketplace experience across major
                 e-commerce channels.
+
             </p>
 
         </div>
 
+
         <div class="markets">
 
+
             <div>
-                <b>Amazon</b>
+
+                <b>
+                    Amazon
+                </b>
+
                 <small>
                     Listings · PPC · Operations
                 </small>
+
             </div>
 
+
             <div>
-                <b>Walmart</b>
+
+                <b>
+                    Walmart
+                </b>
+
                 <small>
                     Offers · Listings · Growth
                 </small>
+
             </div>
 
+
             <div>
-                <b>Shopify</b>
+
+                <b>
+                    Shopify
+                </b>
+
                 <small>
                     Store · Products · Orders
                 </small>
+
             </div>
 
+
             <div>
-                <b>TikTok Shop</b>
+
+                <b>
+                    TikTok Shop
+                </b>
+
                 <small>
                     Products · Operations · Support
                 </small>
+
             </div>
+
 
         </div>
 
@@ -1096,13 +1916,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      SERVICES
-========================= -->
+========================================================= -->
 
 <section class="section soft">
 
     <div class="container">
+
 
         <div class="head">
 
@@ -1115,26 +1936,36 @@ a{
             </h2>
 
             <p class="lead">
-                E-commerce businesses don't just need someone who knows
-                marketplace tools. They need a partner who can identify
-                problems, execute the work and deliver organized results.
+
+                E-commerce businesses don't just need someone who
+                knows marketplace tools. They need a partner who
+                can identify problems, execute the work and deliver
+                organized results.
+
             </p>
 
         </div>
 
+
         <div class="services">
 
-            <a class="service" href="services/product-research.html">
 
-                <small>01</small>
+            <a
+                class="service"
+                href="services/product-research.html"
+            >
+
+                <small>
+                    01
+                </small>
 
                 <h3>
                     Product Research
                 </h3>
 
                 <p>
-                    Demand, competition, keywords, profitability and
-                    opportunity analysis.
+                    Demand, competition, keywords, profitability
+                    and opportunity analysis.
                 </p>
 
                 <span class="link">
@@ -1144,9 +1975,14 @@ a{
             </a>
 
 
-            <a class="service" href="services/listing-seo.html">
+            <a
+                class="service"
+                href="services/listing-seo.html"
+            >
 
-                <small>02</small>
+                <small>
+                    02
+                </small>
 
                 <h3>
                     Amazon Listing & SEO
@@ -1164,17 +2000,22 @@ a{
             </a>
 
 
-            <a class="service" href="services/amazon-ppc.html">
+            <a
+                class="service"
+                href="services/amazon-ppc.html"
+            >
 
-                <small>03</small>
+                <small>
+                    03
+                </small>
 
                 <h3>
                     Amazon PPC
                 </h3>
 
                 <p>
-                    Campaign structure, keywords, bids, search terms
-                    and optimization.
+                    Campaign structure, keywords, bids, search
+                    terms and optimization.
                 </p>
 
                 <span class="link">
@@ -1184,9 +2025,14 @@ a{
             </a>
 
 
-            <a class="service" href="services/private-label.html">
+            <a
+                class="service"
+                href="services/private-label.html"
+            >
 
-                <small>04</small>
+                <small>
+                    04
+                </small>
 
                 <h3>
                     Private Label
@@ -1204,9 +2050,14 @@ a{
             </a>
 
 
-            <a class="service" href="services/marketplace-operations.html">
+            <a
+                class="service"
+                href="services/marketplace-operations.html"
+            >
 
-                <small>05</small>
+                <small>
+                    05
+                </small>
 
                 <h3>
                     Marketplace Operations
@@ -1224,9 +2075,14 @@ a{
             </a>
 
 
-            <a class="service" href="services/dropshipping.html">
+            <a
+                class="service"
+                href="services/dropshipping.html"
+            >
 
-                <small>06</small>
+                <small>
+                    06
+                </small>
 
                 <h3>
                     Dropshipping
@@ -1244,9 +2100,14 @@ a{
             </a>
 
 
-            <a class="service" href="services/walmart-marketplace.html">
+            <a
+                class="service"
+                href="services/walmart-marketplace.html"
+            >
 
-                <small>07</small>
+                <small>
+                    07
+                </small>
 
                 <h3>
                     Walmart Marketplace
@@ -1264,9 +2125,14 @@ a{
             </a>
 
 
-            <a class="service" href="services/ecommerce-creative.html">
+            <a
+                class="service"
+                href="services/ecommerce-creative.html"
+            >
 
-                <small>08</small>
+                <small>
+                    08
+                </small>
 
                 <h3>
                     E-Commerce Creative & A+ Content
@@ -1283,6 +2149,7 @@ a{
 
             </a>
 
+
         </div>
 
     </div>
@@ -1290,13 +2157,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      EXPERTISE
-========================= -->
+========================================================= -->
 
 <section class="section">
 
     <div class="container">
+
 
         <div class="head center">
 
@@ -1310,7 +2178,9 @@ a{
 
         </div>
 
+
         <div class="expertise">
+
 
             <div class="card">
 
@@ -1319,9 +2189,12 @@ a{
                 </h3>
 
                 <p class="lead">
-                    Amazon Seller Central, Walmart, Shopify and
-                    TikTok Shop.
+
+                    Amazon Seller Central, Walmart, Shopify
+                    and TikTok Shop.
+
                 </p>
+
 
                 <div class="tags">
 
@@ -1353,9 +2226,12 @@ a{
                 </h3>
 
                 <p class="lead">
-                    Research and optimization work tied to marketplace
-                    performance.
+
+                    Research and optimization work tied to
+                    marketplace performance.
+
                 </p>
+
 
                 <div class="tags">
 
@@ -1387,9 +2263,12 @@ a{
                 </h3>
 
                 <p class="lead">
-                    Product-focused visual assets for e-commerce pages
-                    and A+ content.
+
+                    Product-focused visual assets for e-commerce
+                    pages and A+ content.
+
                 </p>
+
 
                 <div class="tags">
 
@@ -1413,6 +2292,7 @@ a{
 
             </div>
 
+
         </div>
 
     </div>
@@ -1420,13 +2300,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      PROCESS
-========================= -->
+========================================================= -->
 
 <section class="section darksec">
 
     <div class="container">
+
 
         <div class="head">
 
@@ -1444,37 +2325,45 @@ a{
 
         </div>
 
+
         <div class="process">
+
 
             <div class="step">
                 <b>01</b>
                 Research
             </div>
 
+
             <div class="step">
                 <b>02</b>
                 Analyze
             </div>
+
 
             <div class="step">
                 <b>03</b>
                 Plan
             </div>
 
+
             <div class="step">
                 <b>04</b>
                 Execute
             </div>
+
 
             <div class="step">
                 <b>05</b>
                 Monitor
             </div>
 
+
             <div class="step">
                 <b>06</b>
                 Improve
             </div>
+
 
         </div>
 
@@ -1483,13 +2372,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      EXPERIENCE METRICS
-========================= -->
+========================================================= -->
 
 <section class="section">
 
     <div class="container">
+
 
         <div class="head">
 
@@ -1503,7 +2393,9 @@ a{
 
         </div>
 
+
         <div class="metrics">
+
 
             <div class="metric">
 
@@ -1556,6 +2448,7 @@ a{
 
             </div>
 
+
         </div>
 
     </div>
@@ -1563,13 +2456,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      FEATURED WORK
-========================= -->
+========================================================= -->
 
 <section class="section soft">
 
     <div class="container">
+
 
         <div class="head">
 
@@ -1582,18 +2476,24 @@ a{
             </h2>
 
             <p class="lead">
+
                 Explore examples of product research, listing
                 optimization, PPC management and marketplace operations.
+
             </p>
 
         </div>
+
 
         <div class="works">
 
 
             <!-- PROJECT 1 -->
 
-            <a class="work" href="work/amazon-product-research.html">
+            <a
+                class="work"
+                href="work/amazon-product-research.html"
+            >
 
                 <div class="art">
 
@@ -1606,10 +2506,15 @@ a{
                         </div>
 
                         <div class="lines">
+
                             <i class="tall"></i>
+
                             <i></i>
+
                             <i></i>
+
                             <i class="tall"></i>
+
                         </div>
 
                     </div>
@@ -1619,6 +2524,7 @@ a{
                     </label>
 
                 </div>
+
 
                 <div class="workbody">
 
@@ -1645,7 +2551,10 @@ a{
 
             <!-- PROJECT 2 -->
 
-            <a class="work" href="work/amazon-ppc.html">
+            <a
+                class="work"
+                href="work/amazon-ppc.html"
+            >
 
                 <div class="art">
 
@@ -1658,10 +2567,15 @@ a{
                         </div>
 
                         <div class="lines">
+
                             <i class="tall"></i>
+
                             <i></i>
+
                             <i></i>
+
                             <i class="tall"></i>
+
                         </div>
 
                     </div>
@@ -1671,6 +2585,7 @@ a{
                     </label>
 
                 </div>
+
 
                 <div class="workbody">
 
@@ -1697,7 +2612,10 @@ a{
 
             <!-- PROJECT 3 -->
 
-            <a class="work" href="work/private-label.html">
+            <a
+                class="work"
+                href="work/private-label.html"
+            >
 
                 <div class="art">
 
@@ -1710,10 +2628,15 @@ a{
                         </div>
 
                         <div class="lines">
+
                             <i class="tall"></i>
+
                             <i></i>
+
                             <i></i>
+
                             <i class="tall"></i>
+
                         </div>
 
                     </div>
@@ -1723,6 +2646,7 @@ a{
                     </label>
 
                 </div>
+
 
                 <div class="workbody">
 
@@ -1749,7 +2673,10 @@ a{
 
             <!-- PROJECT 4 -->
 
-            <a class="work" href="work/amazon-listing-seo.html">
+            <a
+                class="work"
+                href="work/amazon-listing-seo.html"
+            >
 
                 <div class="art">
 
@@ -1762,10 +2689,15 @@ a{
                         </div>
 
                         <div class="lines">
+
                             <i class="tall"></i>
+
                             <i></i>
+
                             <i></i>
+
                             <i class="tall"></i>
+
                         </div>
 
                     </div>
@@ -1775,6 +2707,7 @@ a{
                     </label>
 
                 </div>
+
 
                 <div class="workbody">
 
@@ -1801,7 +2734,10 @@ a{
 
             <!-- PROJECT 5 -->
 
-            <a class="work" href="work/dropshipping-operations.html">
+            <a
+                class="work"
+                href="work/dropshipping-operations.html"
+            >
 
                 <div class="art">
 
@@ -1814,10 +2750,15 @@ a{
                         </div>
 
                         <div class="lines">
+
                             <i class="tall"></i>
+
                             <i></i>
+
                             <i></i>
+
                             <i class="tall"></i>
+
                         </div>
 
                     </div>
@@ -1827,6 +2768,7 @@ a{
                     </label>
 
                 </div>
+
 
                 <div class="workbody">
 
@@ -1853,7 +2795,10 @@ a{
 
             <!-- PROJECT 6 -->
 
-            <a class="work" href="work/walmart-marketplace.html">
+            <a
+                class="work"
+                href="work/walmart-marketplace.html"
+            >
 
                 <div class="art">
 
@@ -1866,10 +2811,15 @@ a{
                         </div>
 
                         <div class="lines">
+
                             <i class="tall"></i>
+
                             <i></i>
+
                             <i></i>
+
                             <i class="tall"></i>
+
                         </div>
 
                     </div>
@@ -1879,6 +2829,7 @@ a{
                     </label>
 
                 </div>
+
 
                 <div class="workbody">
 
@@ -1902,11 +2853,16 @@ a{
 
             </a>
 
+
         </div>
 
+
         <div class="note">
-            The six project visuals are coded high-quality dashboard-style
-            demonstrations and do not use the older project image URLs.
+
+            The six project visuals are coded high-quality
+            dashboard-style demonstrations and do not use the
+            older project image URLs.
+
         </div>
 
     </div>
@@ -1914,13 +2870,14 @@ a{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      CREATIVE & A+ CONTENT
-========================= -->
+========================================================= -->
 
 <section class="section">
 
     <div class="container creative">
+
 
         <div class="creativebox">
 
@@ -1928,15 +2885,19 @@ a{
                 Creative Services
             </span>
 
+
             <h2>
                 E-Commerce Creative & A+ Content
             </h2>
+
 
             <p>
                 Product-focused visuals for Amazon and e-commerce brands.
             </p>
 
+
             <div class="mock">
+
 
                 <div class="wide">
 
@@ -1950,6 +2911,7 @@ a{
 
                 </div>
 
+
                 <div>
 
                     <b>
@@ -1961,6 +2923,7 @@ a{
                     Features & benefits
 
                 </div>
+
 
                 <div>
 
@@ -1974,6 +2937,7 @@ a{
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1985,15 +2949,20 @@ a{
                 Creative Capability
             </span>
 
+
             <h2>
                 From Product Images to A+ Storytelling
             </h2>
 
+
             <p class="lead">
+
                 Hero Banners, Lifestyle Photos, Infographics &
                 Feature Callouts, Comparison Charts, Brand Logos &
                 Story Cards, and Product Image Editing.
+
             </p>
+
 
             <a
                 class="btn dark"
@@ -2004,22 +2973,25 @@ a{
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      FINAL CTA
-========================= -->
+========================================================= -->
 
 <section class="section">
 
     <div class="container">
 
+
         <div class="cta">
 
             <div class="ctarow">
+
 
                 <div>
 
@@ -2027,9 +2999,11 @@ a{
                         Let's Work Together
                     </span>
 
+
                     <h2>
                         Have an E-Commerce Challenge?
                     </h2>
+
 
                     <p>
                         Tell me what you need help with.
@@ -2037,12 +3011,14 @@ a{
 
                 </div>
 
+
                 <a
                     class="btn primary"
                     href="contact.html"
                 >
                     Start a Conversation
                 </a>
+
 
             </div>
 
@@ -2052,16 +3028,18 @@ a{
 
 </section>
 
+
 </main>
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer class="footer">
 
     <div class="container footgrid">
+
 
         <div>
 
@@ -2069,9 +3047,12 @@ a{
                 MINHAJ SHEIKH
             </b>
 
+
             <p>
-                E-Commerce & Marketplace Specialist helping businesses
-                build, optimize and manage marketplaces.
+
+                E-Commerce & Marketplace Specialist helping
+                businesses build, optimize and manage marketplaces.
+
             </p>
 
         </div>
@@ -2083,17 +3064,21 @@ a{
                 Quick Links
             </h4>
 
+
             <a href="about.html">
                 About
             </a>
+
 
             <a href="services.html">
                 Services
             </a>
 
+
             <a href="work.html">
                 Work
             </a>
+
 
             <a href="experience.html">
                 Experience
@@ -2108,17 +3093,21 @@ a{
                 Services
             </h4>
 
+
             <a href="services/product-research.html">
                 Product Research
             </a>
+
 
             <a href="services/amazon-ppc.html">
                 Amazon PPC
             </a>
 
+
             <a href="services/listing-seo.html">
                 Listing & SEO
             </a>
+
 
             <a href="services/ecommerce-creative.html">
                 A+ Content
@@ -2133,70 +3122,135 @@ a{
                 Connect
             </h4>
 
+
             <a href="mailto:shaikhminhaj269@gmail.com">
                 shaikhminhaj269@gmail.com
             </a>
 
-            <a href="https://wa.me/923152080479">
+
+            <a
+                href="https://wa.me/923152080479"
+                target="_blank"
+                rel="noopener"
+            >
                 WhatsApp
             </a>
 
-            <a href="https://www.linkedin.com/in/minhaj-sheikh/">
+
+            <a
+                href="https://www.linkedin.com/in/minhaj-sheikh/"
+                target="_blank"
+                rel="noopener"
+            >
                 LinkedIn
             </a>
 
         </div>
+
 
     </div>
 
 
     <div class="container bottom">
 
+
         <span>
             © 2026 Minhaj Sheikh. All rights reserved.
         </span>
 
+
         <span>
             Build. Optimize. Grow.
         </span>
+
 
     </div>
 
 </footer>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script>
 
-document.addEventListener("DOMContentLoaded",()=>{
+document.addEventListener("DOMContentLoaded", function(){
 
-    const m=document.querySelector('.menu');
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
 
-    if(m){
+    const menu = document.querySelector(".menu");
 
-        m.addEventListener('click',()=>{
+    const mobileNav = document.querySelector("#mobileNav");
 
-            alert(
-                'On mobile, use the page buttons below or enable the navigation drawer in the next refinement.'
+
+    if(menu && mobileNav){
+
+        menu.addEventListener("click", function(){
+
+            const isOpen =
+                mobileNav.classList.toggle("open");
+
+            menu.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
             );
+
+            menu.textContent =
+                isOpen ? "✕" : "☰";
+
+        });
+
+
+        /*
+           Close mobile menu after selecting
+           a page.
+        */
+
+        mobileNav.querySelectorAll("a").forEach(function(link){
+
+            link.addEventListener("click", function(){
+
+                mobileNav.classList.remove("open");
+
+                menu.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menu.textContent = "☰";
+
+            });
 
         });
 
     }
 
-    const f=document.querySelector('#contactForm');
 
-    if(f){
+    /* =========================================
+       EXISTING CONTACT FORM SUPPORT
+    ========================================= */
 
-        f.addEventListener('submit',e=>{
+    const form = document.querySelector("#contactForm");
+
+
+    if(form){
+
+        form.addEventListener("submit", function(e){
 
             e.preventDefault();
 
-            const status=document.querySelector('#status');
+
+            const status =
+                document.querySelector("#status");
+
 
             if(status){
 
-                status.textContent=
-                    'Thanks. Your message is ready for EmailJS integration.';
+                status.textContent =
+                    "Thanks. Your message is ready for EmailJS integration.";
 
             }
 
@@ -2208,5 +3262,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 </script>
 
+
 </body>
+
 </html>
